@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, Button } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View, TextInput } from 'react-native';
 import DefaultButton from '../shared/button';
 
 /**
@@ -9,39 +9,28 @@ import DefaultButton from '../shared/button';
  * of a new account or to log in of an existing one.
  * @returns
  */
-function Login() {
-  console.log("Button pressed");
-}
+
 function LoginScreen() {
-  const x = () => {
-    console.log('hallo');
+  const [uname, onChangeUname] = React.useState('');
+  const onLogin = (): void => {
+    console.log('Hello, ' + uname);
   };
 
-  return(
-    <SafeAreaView style={styles.container}>
+  return (
+    <View style={styles.container}>
+      <TextInput style={styles.input} onChangeText={onChangeUname} placeholder="Username" value={uname} />
 
-      <Text style={styles.title} >
-        Chatify
-      </Text>
-
-      <Text style={styles.text} >
-        Welcome to Chatify, in order to start chating
-        you are required to log in to your account.
-      </Text>
-
-      <DefaultButton text='login' onPress={Login}
-      />
-
+      <DefaultButton text="Login" onPress={onLogin} />
       <StatusBar style="auto" />
-    </SafeAreaView>
-  )
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   // Style for the whole container
   container: {
     flex: 1,
-    backgroundColor: '#212121',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -50,8 +39,7 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     fontSize: 60,
-    color: '#fff',
-
+    color: '#000',
   },
 
   //Style for the text
@@ -60,7 +48,12 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingLeft: 20,
     fontSize: 17,
-    color: '#fff',
+    color: '#000',
+  },
+
+  input: {
+    borderRadius: 15,
+    borderColor: '#000',
   },
 });
 

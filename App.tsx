@@ -1,21 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import LoginScreen from "./src/screens/login";
+import { StyleSheet, SafeAreaView } from 'react-native';
+import LoginScreen from './src/screens/LoginScreen';
 
 export default function App(): React.ReactElement {
   return (
+    <SafeAreaView style={styles.container}>
       <LoginScreen />
-
-    /*<SafeAreaView style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
     </SafeAreaView>
-  */
- );
+  );
 }
 
-/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -23,4 +19,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-}); */
+});

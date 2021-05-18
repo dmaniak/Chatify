@@ -51,13 +51,11 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-namespace': 'off',
-    // react plugin
     'react/no-unescaped-entities': 'off',
-    // react native plugin
     'react-native/no-unused-styles': 'warn',
     'react-native/split-platform-components': 'warn',
     'react-native/no-inline-styles': 'warn', // TODO: 'off'?
-    'react-native/no-color-literals': 'warn',
+    //'react-native/no-color-literals': 'warn',
     'react-native/no-raw-text': 'off',
     'react-native/no-single-element-style-arrays': 'off',
 
